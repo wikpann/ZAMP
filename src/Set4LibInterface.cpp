@@ -6,9 +6,7 @@ bool Set4LibInterface::AddPlugin(const std::string &LibName) {
     void *LibHandler = nullptr;
     AbstractInterp4Command *(*pCreateCmdInterp)(void) = nullptr;
     std::shared_ptr<LibInterface> interface(new LibInterface(LibHandler, name, pCreateCmdInterp));
-    if(!interface->loadPlugin()) {
-        return false;
-    }
+    interface->loadPlugin();
     
     this->insert_or_assign(LibName, interface);
     return true;

@@ -27,7 +27,7 @@ private:
 public:
     LibInterface(void *LibHandler, std::string &CmdName, AbstractInterp4Command* (*pCreateInterp)(void));
     ~LibInterface();
-    int loadPlugin();
+    void loadPlugin();
     void printSyntax();
 };
 
